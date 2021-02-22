@@ -1,0 +1,9 @@
+Welcome,
+
+<% @tweets.each do |t| %>
+  <%= t.content %><br>
+<% end %>
+
+<form action="GET" method="/logout">
+  <input type="submit" value="logout">
+</form>

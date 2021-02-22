@@ -72,6 +72,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
+    securerandom (0.1.0)
     shotgun (0.9.2)
       rack (>= 1.0)
     sinatra (2.0.7)
@@ -113,6 +114,7 @@ DEPENDENCIES
   rake
   require_all
   rspec
+  securerandom
   shotgun
   sinatra
   sinatra-activerecord
@@ -121,4 +123,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   2.0.2
+   2.1.4

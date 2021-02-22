@@ -76,7 +76,7 @@ describe ApplicationController do
       expect(last_response.status).to eq(200)
     end
 
-    it 'loads the tweets index after login' do
+    it 'loads the tweets index after login' do # create users, got to login form, redirect to index page of tweets, page has "Welcome,"
       user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
       params = {
         :username => "becky567",
@@ -127,7 +127,7 @@ describe ApplicationController do
       expect(last_response.status).to eq(302)
     end
 
-    it 'loads /tweets if user is logged in' do
+    it 'loads /tweets if user is logged in' do  
       user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
 
 
@@ -141,7 +141,7 @@ describe ApplicationController do
     end
   end
 
-  describe 'user show page' do
+  describe 'user show page' do  
     it 'shows all a single users tweets' do
       user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
       tweet1 = Tweet.create(:content => "tweeting!", :user_id => user.id)
@@ -324,7 +324,7 @@ describe ApplicationController do
         fill_in(:username, :with => "becky567")
         fill_in(:password, :with => "kittens")
         click_button 'submit'
-        visit "tweets/#{tweet2.id}"
+        visit "tweets/#{tweet2.id}" 
         click_on "Edit Tweet"
         expect(page.status_code).to eq(200)
         expect(Tweet.find_by(:content => "look at this tweet")).to be_instance_of(Tweet)
@@ -376,7 +376,7 @@ describe ApplicationController do
   end
 
   describe 'delete action' do
-    context "logged in" do
+    context "logged in" do  
       it 'lets a user delete their own tweet if they are logged in' do
         user = User.create(:username => "becky567", :email => "starz@aol.com", :password => "kittens")
         tweet = Tweet.create(:content => "tweeting!", :user_id => 1)
